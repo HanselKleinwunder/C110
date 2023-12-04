@@ -1,0 +1,4 @@
+﻿  Lab1_C110_2023.cpp
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(232,24): warning C4018: '<': signed/unsigned mismatch
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(213,9): warning C4101: 'cPointers': unreferenced local variable
+  Lab1.vcxproj -> E:\Lernen\Documents\IT\Repositories\C110\Labs\Debug\Lab1.exe

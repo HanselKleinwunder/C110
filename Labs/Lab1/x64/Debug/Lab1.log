@@ -1,0 +1,10 @@
+﻿  Lab1_C110_2023.cpp
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(150,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(150,2): error C2065: 'nop': undeclared identifier
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(158,3): error C2059: syntax error: 'const'
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(159,16): error C2065: 'N': undeclared identifier
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(159,19): error C2065: 'K': undeclared identifier
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(193,2): error C2447: '{': missing function header (old-style formal list?)
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(411,2): error C2059: syntax error: 'return'
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(412,1): error C2059: syntax error: '}'
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(412,1): error C2143: syntax error: missing ';' before '}'
