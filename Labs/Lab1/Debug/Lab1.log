@@ -1,4 +1,3 @@
 ﻿  Lab1_C110_2023.cpp
-E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(232,24): warning C4018: '<': signed/unsigned mismatch
-E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(213,9): warning C4101: 'cPointers': unreferenced local variable
+E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab1\Lab1_C110_2023.cpp(357,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Lab1.vcxproj -> E:\Lernen\Documents\IT\Repositories\C110\Labs\Debug\Lab1.exe
