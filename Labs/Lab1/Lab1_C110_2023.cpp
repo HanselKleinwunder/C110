@@ -241,6 +241,7 @@ int main()
 			if (strcmp(cBuffer[i], STOP_STRING) == 0) {
 				break;
 			}
+			cPointers[i] = cBuffer[i];
 			counter++;
 		}
 
@@ -248,7 +249,7 @@ int main()
 
 		for (int i = 0; i < counter; i++)
 		{
-			std::cout << cBuffer[i] << ' ';
+			std::cout << cPointers[i] << ' ';
 		}
 		std::cout << std::endl;
 
@@ -257,29 +258,31 @@ int main()
 
 		int pCounter = 0;
 
-		for (int i = 0; i < N; i++)
-		{
-			if (strcmp(cBuffer[i], STOP_STRING) != '\0') {
-				cPointers[pCounter] = cBuffer[i];
-				pCounter++;
-			}
-		}
+		//for (int i = 0; i < N; i++)
+		//{
+		//	if (strcmp(cBuffer[i], STOP_STRING) != '\0') {
+		//		cPointers[pCounter] = cBuffer[i];
+		//		pCounter++;
+		//	}
+		//}
 
-		for (int i = 0; i < pCounter; i++)
-		{
-			std::cout << cPointers[i] << ' ';
-		}
-		std::cout << std::endl;
+		//for (int i = 0; i < pCounter; i++)
+		//{
+		//	std::cout << cPointers[i] << ' ';
+		//}
+		//std::cout << std::endl;
 
 		//C:
 		std::cout << "C: " << std::endl;
 		std::cout << "Sort: " << std::endl;
 
-		for (int i = 0; i < pCounter; i++)
+		for (int i = 0; i < counter; i++)
 		{
-			for (int j = 0; j < pCounter - 1; j++)
+			for (int j = 0; j < counter - 1; j++)
 			{
-				if (cPointers[j + 1] < cPointers[j]) {
+				//if (*(cPointers[j + 1]) < *(cPointers[j])) 
+				if(strcmp(cPointers[j+1],cPointers[j]) < 0)
+				{
 					char* temp = cPointers[j + 1];
 					cPointers[j + 1] = cPointers[j];
 					cPointers[j] = temp;
@@ -287,7 +290,7 @@ int main()
 			}
 		}
 
-		for (int i = 0; i < pCounter; i++)
+		for (int i = 0; i < counter; i++)
 		{
 			std::cout << cPointers[i] << ' ';
 		}
@@ -379,10 +382,10 @@ int main()
 #endif	
 ///////////////////////////////////////////////////////////////////////////
 //Задание 4
-#if 1
+#if 0
 	{
 		//а) Объявите двухмерный ВСТРОЕННЫЙ массив элементов типа char.
-		const int N = 5, M = 5;
+		const int N = 5, M = 10;
 		char arr[N][M];
 		//Сформируйте значения элементов массива с помощью генератора случайных
 		//чисел таким образом, чтобы в массиве были только символы '_' и '*'
@@ -419,8 +422,57 @@ int main()
 					arr[i][j] = '_';
 				}
 
+			}
+		}
+
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t J = 0; J < M; J++)
+			{
+				std::cout << arr[i][J];
+			}
+
+			std::cout << std::endl;
+		}
+		std::cout << std::endl;
+
+		for (size_t i = 0; i < N; i++)
+		{
+			char left = arr[i][0];
+			char right = M - 1;
+
+			while (left < right)
+			{
+				if (arr[i][left] == '_')
+				{
+					if (arr[i][right] == '*')
+					{
+						char temp = arr[i][left];
+						arr[i][left] = arr[i][right];
+						arr[i][right] = temp;
+						left++;
+						right--;
+					}
+					else
+					{
+						right--;
+					}
+				}
+				else
+				{
+					left++;
+				}
+			}
+		}
+
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t j = 0; j < M; j++)
+			{
 				std::cout << arr[i][j];
 			}
+
+			std::cout << std::endl;
 		}
 
 		//В каждой строке "сдвиньте звездочки" в начало строки, например:
@@ -428,37 +480,37 @@ int main()
 		//стало: '*' '*' '*' '*' '*' '_' '_' '_' '_' '_'
 		//и распечатайте массив по строкам - "постройте распределение"
 
-		for (int i = 0; i < N; i++)
-		{
-			int count = 0;
+		//for (int i = 0; i < N; i++)
+		//{
+		//	int count = 0;
 
-			for (int j = 0; j < M; j++)
-			{
-				if (arr[i][j] == '*') {
-					++count;
-				}
-			}
-			for (int k = 0; k < M; k++)
-			{
-				if (k < count) {
-					arr[i][k] = '*';
-				}
-				else {
-					arr[i][k] = '_';
-				}
-			}
-		}
-		
-		std::cout << std::endl;
+		//	for (int j = 0; j < M; j++)
+		//	{
+		//		if (arr[i][j] == '*') {
+		//			++count;
+		//		}
+		//	}
+		//	for (int k = 0; k < M; k++)
+		//	{
+		//		if (k < count) {
+		//			arr[i][k] = '*';
+		//		}
+		//		else {
+		//			arr[i][k] = '_';
+		//		}
+		//	}
+		//}
+		//
+		//std::cout << std::endl;
 
-		for (int i = 0; i < N; i++)
-		{
-			for (int j = 0; j < M; j++)
-			{
-				std::cout << arr[i][j];
-			}
+		//for (int i = 0; i < N; i++)
+		//{
+		//	for (int j = 0; j < M; j++)
+		//	{
+		//		std::cout << arr[i][j];
+		//	}
 
-		}
+		//}
 	}
 	{
 		// б) Модифицируйте предыдущее задание следующим способом:
@@ -471,34 +523,40 @@ int main()
 //			Динамическое выделение памяти                     //
 ///////////////////////////////////////////////////////////////
 //Задание 5.
-#if 0
+#if 1
 	{
 		////Задание 5а.Создайте ДИНАМИЧЕСКИЙ двухмерный массив с размерностями,
 		//вычисляемыми в процессе выполнения программы - N*M.
-		//Задайте значения элементов помощью генератора случайных чисел.
+		//Задайте значения элементов с помощью генератора случайных чисел.
 
 		srand(time(0));
 
 		const int N = 5, M = 5;
 
-		int* p = new int [N*M]; //выделение памяти для одномерного массива
+		int** p = new int* [N]; //выделение памяти для одномерного массива
+
+		for (size_t i = 0; i < N; i++)
+		{
+			p[i] = new int[M];
+		}
 
 		for (int i = 0; i < N; i++)
 		{
 			for (int j = 0; j < M; j++)
 			{
-				p[i * M + j] = rand() % 100;
+				p[i][j] = rand() % 100;
 			}
 		}
 
-		std::cout << "Exercise 5A:" << std::endl;
+		std::cout << "5A:" << std::endl;
 
 		for (int i = 0; i < N; i++)
 		{
 			for (int j = 0; j < M; j++)
 			{
-				std::cout << *p << " ";
+				std::cout << p[i][j] << " ";
 			}
+			std::cout << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -506,33 +564,34 @@ int main()
 		//Задание 5б. В сформированном массиве отсортируйте каждую строку по
 		//убыванию значений. Используйте сортировку "выбором"
 
-		for (int i = 0; i < N; i++)
+		for (int row = 0; row < N; row++)
 		{
 			for (int j = 0; j < M - 1; j++)
 			{
-				int indexMax = i;
+				int indexMax = j;
 
 				for (int k = j + 1; k < M; k++)
 				{
-					if (p[i * M + indexMax] < p[i * M + k]) {
+					if (p[row][k] > p[row][indexMax]) {
 						indexMax = k;
 					}
 				}
 
-				int swap = p[i * M + j];
-				p[i * M + j] = p[i * M + indexMax];
-				p[i * M + indexMax] = swap;
+				int temp = p[row][j];
+				p[row][j] = p[row][indexMax];
+				p[row][indexMax] = temp;
 			}
 		}
 
-		std::cout << "Exercise 5B:" << std::endl;
+		std::cout << "5B:" << std::endl;
 
 		for (int i = 0; i < N; i++)
 		{
 			for (int j = 0; j < M; j++)
 			{
-				std::cout << *p << " ";
+				std::cout << p[i][j] << " ";
 			}
+			std::cout << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -550,27 +609,28 @@ int main()
 
 			for (int j = 0; j < M; j++)
 			{
-				pn[i] += p[i * M + j];
+				pn[i] += p[i][j];
 			}
 
 			pn[i] /= N;
 		}
 
-		std::cout << "Exercise 5C:" << std::endl;
+		std::cout << "5C:" << std::endl;
 
 		for (int i = 0; i < N; i++)
 		{
-			for (int j = 0; j < M; j++)
-			{
-				std::cout << *pn << " ";
-			}
+			/*for (int j = 0; j < M; j++)
+			{*/
+				std::cout << pn[i] << " ";
+			/*}*/
+			std::cout << std::endl;
 		}
 
 		std::cout << std::endl;
 
 		//Подсказка - не забудьте освободить память!
 
-		delete[] pn;
+		//delete[] pn;
 		delete[] p;
 	}
 #endif
