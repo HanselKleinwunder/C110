@@ -493,20 +493,29 @@ int main()
 		std::cout << "B: " << std::endl;
 		std::cout << std::endl;
 
-		for (size_t i = 0; i < N; i++)
+		for (int i = 0; i < N - 1; i++) {
+			for (int j = 0; j < M; j++) {
+				if (arr[i][j] == '*') {
+					arr[i][j] = '_';
+					arr[i + 1][j] = '*';
+				}
+			}
+		}
+
+		/*for (size_t i = 0; i < N; i++)
 		{
 			char left = 0;
-			char right = M - 1;
+			char right = N - 1;
 
 			while (left < right)
 			{
-				if (arr[i][left] == '_')
+				if (arr[left][i] == '_')
 				{
-					if (arr[i][right] == '*')
+					if (arr[right][i] == '*')
 					{
-						char temp = arr[i][left];
-						arr[i][left] = arr[i][right];
-						arr[i][right] = temp;
+						char temp = arr[left][i];
+						arr[left][i] = arr[right][i];
+						arr[right][i] = temp;
 						left++;
 						right--;
 					}
@@ -520,7 +529,7 @@ int main()
 					left++;
 				}
 			}
-		}
+		}*/
 
 		for (size_t i = 0; i < N; i++)
 		{
