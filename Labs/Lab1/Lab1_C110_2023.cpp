@@ -502,34 +502,34 @@ int main()
 			}
 		}
 
-		/*for (size_t i = 0; i < N; i++)
-		{
-			char left = 0;
-			char right = N - 1;
+		//for (size_t i = 0; i < N - 1; i++)
+		//{
+		//	char left = 0;
+		//	char right = M;
 
-			while (left < right)
-			{
-				if (arr[left][i] == '_')
-				{
-					if (arr[right][i] == '*')
-					{
-						char temp = arr[left][i];
-						arr[left][i] = arr[right][i];
-						arr[right][i] = temp;
-						left++;
-						right--;
-					}
-					else
-					{
-						right--;
-					}
-				}
-				else
-				{
-					left++;
-				}
-			}
-		}*/
+		//	while (left < right)
+		//	{
+		//		if (arr[i][left] == '_')
+		//		{
+		//			if (arr[i][right] == '*')
+		//			{
+		//				char temp = arr[i][left];
+		//				arr[i][left] = arr[i][right];
+		//				arr[i][right] = temp;
+		//				left++;
+		//				right--;
+		//			}
+		//			else
+		//			{
+		//				right--;
+		//			}
+		//		}
+		//		else
+		//		{
+		//			left++;
+		//		}
+		//	}
+		//}
 
 		for (size_t i = 0; i < N; i++)
 		{
