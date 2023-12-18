@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>E:\Lernen\Documents\IT\Repositories\C110\Labs\Debug\Lab2.exe</FullPath>
+=======
+      <FullPath>D:\Documents\IT\Git\Repositories\C110\Labs\Debug\Lab2.exe</FullPath>
+>>>>>>> ec376debb4b10a3905f2d8d961e53cd5d3ac657e
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

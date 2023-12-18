@@ -1,4 +1,5 @@
 ﻿  Lab2_С110_2023.cpp
+<<<<<<< HEAD
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(162,8): warning C4477: 'scanf' : format string '%lf' requires an argument of type 'double *', but variadic argument 1 has type 'int *'
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(165,8): warning C4477: 'scanf' : format string '%lf' requires an argument of type 'double *', but variadic argument 1 has type 'int *'
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(168,8): warning C4477: 'scanf' : format string '%lf' requires an argument of type 'double *', but variadic argument 1 has type 'int *'
@@ -8,3 +9,6 @@ E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(170,9): w
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(162,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(165,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 E:\Lernen\Documents\IT\Repositories\C110\Labs\Lab2\Lab2_С110_2023.cpp(168,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+=======
+  Lab2.vcxproj -> D:\Documents\IT\Git\Repositories\C110\Labs\Debug\Lab2.exe
+>>>>>>> ec376debb4b10a3905f2d8d961e53cd5d3ac657e

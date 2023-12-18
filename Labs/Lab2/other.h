@@ -12,6 +12,11 @@ const char* GetString2();
 const char* GetString3();
 const char* GetString4();
 const char* GetString5();
+extern void VarArgs(int arg1, ...);
+extern void VarArgsMacros(int arg1, ...);
 const int PrintArray(int** arr, int N, int M);
+extern bool isLeapYear(int year);
+extern int DayOfYear(int day, int month, int year, int nDayTab[][12]);
+extern int DayOfMonth(int day, int year, int nDayTab[][12]);
 
 //extern const int N, M;
