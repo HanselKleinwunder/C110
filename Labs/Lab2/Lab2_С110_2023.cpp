@@ -15,8 +15,8 @@
 
 int _tmain()
 {
-	//Задание 1. 
-	//Массивы в качестве аргументов функции.
+//Задание 1. 
+//Массивы в качестве аргументов функции.
 #if 0
 //Напишите два варианта функции печати элементов
 //1. Встроенного двумерного массива
@@ -27,7 +27,6 @@ int _tmain()
 //Вызов функции PrintArray может выглядеть так:
 //	PrintArray(ar, ... может быть, понадобится передать еще какие-нибудь данные);  //Важно! первый параметр - имя двумерного (!) массива
 	{
-		const int N = 2, M = 2;
 		int arr[N][M];
 
 		for (size_t i = 0; i < N; i++)
@@ -39,13 +38,13 @@ int _tmain()
 			}
 		}
 
-		/*PrintArray(arr, N, M);*/
+		PrintArray(arr, N);
 	}
 	//2. динамического двумерного массива (обе размерности вычисляются)
 	//Замечание:
 	// Задать значения элементам массива можно с помощью кода
 	{
-		int N = 2, M = 2; //2 строчки, а в каждой строчке по 2 колонки
+		int N = 5, M = 6; //2 строчки, а в каждой строчке по 2 колонки
 
 		int** arr = new int* [N]; //создали массив указателей
 
@@ -158,27 +157,27 @@ int _tmain()
 //Задание 4.1-4.2
 #if 0
 //С помощью функции scanf сформируйте три коэффициента : A, B, C
-		{
-			int a, b, c;
+	{
+		int a, b, c;
 
-			std::cout << "Enter integer for A: ";
-			scanf("%i", &a);
-			std::cout << "Enter integer for B: ";
-			scanf("%i", &b);
-			std::cout << "Enter integer for C: ";
-			scanf("%i", &c);
-			std::cout << std::endl;
-			std::cout << "A = " << a << "\nB = " << b << "\nC = " << c << std::endl;
-			std::cout << std::endl;
+		std::cout << "Enter integer for A: ";
+		scanf("%i", &a);
+		std::cout << "Enter integer for B: ";
+		scanf("%i", &b);
+		std::cout << "Enter integer for C: ";
+		scanf("%i", &c);
+		std::cout << std::endl;
+		std::cout << "A = " << a << "\nB = " << b << "\nC = " << c << std::endl;
+		std::cout << std::endl;
 
-			//Выведите таблицу значений y = A * x * x + B * x + C
-			//при изменении x в диапазоне -2 до +2 с шагом 0.5
+		//Выведите таблицу значений y = A * x * x + B * x + C
+		//при изменении x в диапазоне -2 до +2 с шагом 0.5
 
-					int counter = 0;
-					for (double x = -2.01; x < 2.0; x += 0.5) {
-						counter++;
-						printf("| %2d|%4.1lf|  %6.1lf|\n", counter, x, (a * x * x + b * x + c));
-					}
+		int counter = 0;
+		for (double x = -2.01; x < 2.0; x += 0.5) {
+			counter++;
+			printf("| %2d|%4.1lf|  %6.1lf|\n", counter, x, (a * x * x + b * x + c));
+		}
 		}
 #endif
 	stop
@@ -189,7 +188,7 @@ int _tmain()
 //Напишите функции:
 //1)Sum - принимает два значения double и возвращает сумму
 //этих значений
-//2)Sub- принимает два значения double и возвращает разность
+//2)Sub - принимает два значения double и возвращает разность
 //этих значений
 //3)Mul - *
 //4)Div - /
@@ -205,11 +204,67 @@ int _tmain()
 //а Вы выводите результат. Результат получаете посредством вызова
 //соответствующей Вашей функции по указателю.
 //Предусмотрите возможность ввода непредусмотренного знака операции
+
+	{
+		double x = 0, y = 0;
+		char operation = 0;
+		bool cContinue = true;
+
+		while (cContinue == true) {
+			std::cout << "Enter first number: ";
+			std::cin >> x;
+			std::cout << "Enter second number: ";
+			std::cin >> y;
+			std::cout << "Enter operator: ";
+			std::cin >> operation;
+
+			double(*function)(double, double) = nullptr;
+
+			switch (operation) {
+				case '+':
+					function = sum;
+					break;
+				case '-':
+					function = sub;
+					break;
+				case '*':
+					function = mul;
+					break;
+				case '/':
+					function = div;
+					break;
+				case '^':
+					function = pow;
+					break;
+				default:
+					break;
+			}
+			if (function) {
+				std::cout << x << " " << operation << " " << y << " = " << function(x, y);
+				std::wcout << std::endl;
+			}
+
+			char choice = 0;
+			std::cout << "Continue using the calculator? [y/n]: ";
+			std::cin >> choice;
+
+			switch (choice) {
+				case 'Y':
+				case 'y':
+					break;
+				case 'N':
+				case 'n':
+					cContinue = false;
+					break;
+			}
+		}
+	}
+
 #endif
 	stop
 ///////////////////////////////////////////////////////////////////
 //Задание 6. Указатель на функцию в качестве аргумента.
-#if 0
+#if 1
 	//Дана заготовка функции сортировки любых объектов - Sort.
 	//Функция принимает следующие параметры:
 	//1) указатель на первый сортируемый элемент
@@ -264,7 +319,7 @@ int _tmain()
 	stop
 ///////////////////////////////////////////////////////////////////
 //Задание 7. Массивы указателей на функцию.
-#if 1
+#if 0
 	//Напишите несколько функций вида
 	//const char* GetString1();   
 	//const char* GetString2();

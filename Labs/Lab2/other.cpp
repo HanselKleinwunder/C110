@@ -72,8 +72,11 @@ void Sort(char* pcFirst, int nNumber, int size,
 //-----------------------------------------------------------------------
 void SwapInt(void* p1, void* p2)
 {
-
-
+	int* x = static_cast<int*>(p1);
+	int* y = static_cast<int*>(p2);
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 //-----------------------------------------------------------------------
 //int CmpInt(void* p1, void* p2)
@@ -86,36 +89,48 @@ void SwapInt(void* p1, void* p2)
 //	return nResult;
 //}
 //-----------------------------------------------------------------------
-const char* GetString1()
-{
-	return "Hello";
-}
-//-----------------------------------------------------------------------
-const char* GetString2()
-{
-	/*char* str = "Book";
-	return str;*/
-}
-//-----------------------------------------------------------------------
-const char* GetString3()
-{
-	char str[] = "Little";
-	return str;
-}
-//-----------------------------------------------------------------------
-const char* GetString4()
-{
-	static char str[] = "world";
-	return str;
-}
-//-----------------------------------------------------------------------
-const char* GetString5()
-{
-	char* str = new char[strlen("time") + 1];
-	return str;
-}
-const int PrintArray(int** arr, int N, int M) {
+//const char* GetString1()
+//{
+//	return "Hello";
+//}
+////-----------------------------------------------------------------------
+//const char* GetString2()
+//{
+//	/*char* str = "Book";
+//	return str;*/
+//}
+////-----------------------------------------------------------------------
+//const char* GetString3()
+//{
+//	char str[] = "Little";
+//	return str;
+//}
+////-----------------------------------------------------------------------
+//const char* GetString4()
+//{
+//	static char str[] = "world";
+//	return str;
+//}
+////-----------------------------------------------------------------------
+//const char* GetString5()
+//{
+//	char* str = new char[strlen("time") + 1];
+//	return str;
+//}
+void PrintArray(int** arr, int n, int m) {
 
+	for (size_t i = 0; i < n; i++)
+	{
+		for (size_t j = 0; j < m; j++)
+		{
+			std::cout << arr[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+void PrinArray(int arr[][M], int N) {
+	
 	for (size_t i = 0; i < N; i++)
 	{
 		for (size_t j = 0; j < M; j++)
@@ -123,7 +138,6 @@ const int PrintArray(int** arr, int N, int M) {
 			std::cout << arr[i][j] << " ";
 		}
 	}
-	return **arr;
 }
 bool isLeapYear(int year) {
 	return (year % 4 == 0) && !(year % 100 == 0) || (year % 400 == 0);
@@ -155,4 +169,16 @@ int DayOfMonth(int day, int year, int nDayTab[][12]) {
 	int dayOfMonth = day;
 
 	return 0;
+}
+double sum(double x, double y) {
+	return x + y;
+}
+double sub(double x, double y) {
+	return x - y;
+}
+double mul(double x, double y) {
+	return x * y;
+}
+double div(double x, double y) {
+	return x / y;
 }
