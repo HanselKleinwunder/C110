@@ -1,20 +1,15 @@
 #include "other.h"
-<<<<<<< HEAD
-#include <iostream>
-=======
 #include <limits.h>
 #include <ctime>
 #include <iostream>
 #include <cstdarg>
 
->>>>>>> ec376debb4b10a3905f2d8d961e53cd5d3ac657e
 
 ///////////////////////////////////////////////////
-
 //Подсказка-заготовка для задания 5а
 //Без использования макросов
-
-void VarArgs(int arg1,...)
+///////////////////////////////////////////////////
+void VarArgs(int arg1, ...)
 {
 	int number = 0;	//счетчик элементов
 	//Объявите указатель на int и инициализируйте его адресом
@@ -60,13 +55,6 @@ void VarArgsMacros(int arg1, ...)
 	}
 }
 
-///////////////////////////////////////////////////
-
-<<<<<<< HEAD
-#if 0
-
-=======
->>>>>>> ec376debb4b10a3905f2d8d961e53cd5d3ac657e
 void Sort(char* pcFirst, int nNumber, int size,
 	void(*Swap)(void*, void*), int(*Compare)(void*, void*))
 {
@@ -75,7 +63,7 @@ void Sort(char* pcFirst, int nNumber, int size,
 		for (int j = nNumber - 1; j >= i; j--)
 		{
 			char* pCurrent = pcFirst + j * size;
-			char* pPrevious = pcFirst + (j - 1)*size;
+			char* pPrevious = pcFirst + (j - 1) * size;
 			if ((*Compare)(pPrevious, pCurrent) > 0)//требуется
 												//переставить
 				(*Swap)(pPrevious, pCurrent);
@@ -123,25 +111,9 @@ const char* GetString4()
 //-----------------------------------------------------------------------
 const char* GetString5()
 {
-	char* str = new char[strlen("time")+1];
+	char* str = new char[strlen("time") + 1];
 	return str;
 }
-<<<<<<< HEAD
-#endif
-//const int PrintArray(int** arr, int N, int M) {
-//
-//	std::cout << std::endl;
-//	for (size_t i = 0; i < N; i++)
-//	{
-//		for (size_t j = 0; j < M; j++)
-//		{
-//			std::cout << arr[i][j] << " ";
-//		}
-//	}
-//}
-
-//const int N = 3, M = 4;
-=======
 const int PrintArray(int** arr, int N, int M) {
 
 	for (size_t i = 0; i < N; i++)
@@ -184,4 +156,3 @@ int DayOfMonth(int day, int year, int nDayTab[][12]) {
 
 	return 0;
 }
->>>>>>> ec376debb4b10a3905f2d8d961e53cd5d3ac657e
