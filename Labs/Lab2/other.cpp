@@ -1,4 +1,5 @@
 #include "other.h"
+#include <iostream>
 
 ///////////////////////////////////////////////////
 
@@ -28,7 +29,7 @@ void VarArgs(int arg1,...)
 
 ///////////////////////////////////////////////////
 
-
+#if 0
 
 void Sort(char* pcFirst, int nNumber, int size,
 	void(*Swap)(void*, void*), int(*Compare)(void*, void*))
@@ -89,7 +90,17 @@ const char* GetString5()
 	char* str = new char[strlen("time")+1];
 	return str;
 }
+#endif
+//const int PrintArray(int** arr, int N, int M) {
+//
+//	std::cout << std::endl;
+//	for (size_t i = 0; i < N; i++)
+//	{
+//		for (size_t j = 0; j < M; j++)
+//		{
+//			std::cout << arr[i][j] << " ";
+//		}
+//	}
+//}
 
-const int PrintArray(int** arr, int N, int M) {
-
-}
+//const int N = 3, M = 4;

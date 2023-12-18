@@ -18,7 +18,7 @@ int _tmain()
 {
 //Задание 1. 
 //массивы в качестве аргументов функции.
-#if 1
+#if 0
 //Напишите два варианта функции печати элементов
 //1. Встроенного двумерного массива
 //int ar[N][M]; //подумайте - как и где должны быть заданы N и M
@@ -27,15 +27,73 @@ int _tmain()
 // либо с помощью кода 
 //Вызов функции PrintArray может выглядеть так:
 //	PrintArray(ar, ... может быть, понадобится передать еще какие-нибудь данные);  //Важно! первый параметр - имя двумерного (!) массива
-	
-	const int N = 3, M = 4;
-	int arr[N][M];
+	{
+		const int N = 3, M = 4;
+		int arr[N][M];
 
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t j = 0; j < M; j++)
+			{
+				std::cout << "Enter element of index: [" << i << "][" << j << "]: ";
+				std::cin >> arr[i][j];
+			}
+		}
 
+		std::cout << std::endl;
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t j = 0; j < M; j++)
+			{
+				std::cout << arr[i][j] << " ";
+			}
+		}
+	}
+	//PrintArray(arr, N, M);
 
 //2. динамического двумерного массива (обе размерности вычисляются)
 //Замечание:
-// Задать значения элементам массива можно с помощью кода 
+//Задать значения элементам массива можно с помощью кода 
+	{
+		int N = 0, M = 0;
+
+		std::cout << "Enter array rows size: ";
+		std::cin >> N;
+		std::cout << "Enter array columns size: ";
+		std::cin >> M;
+
+		int** arr = new int* [N];
+
+		for (size_t i = 0; i < N; i++)
+		{
+			arr[i] = new int[M];
+		}
+
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t j = 0; j < M; j++)
+			{
+				std::cout << "Enter element of index: [" << i << "][" << j << "]: ";
+				std::cin >> arr[i][j];
+			}
+		}
+
+		std::cout << std::endl;
+		for (size_t i = 0; i < N; i++)
+		{
+			for (size_t j = 0; j < M; j++)
+			{
+				std::cout << arr[i][j] << " ";
+			}
+		}
+
+		for (size_t i = 0; i < N; i++)
+		{
+			delete[] arr[i];
+		}
+
+		delete[] arr;
+	}
 #endif
 	stop
 /////////////////////////////////////////////////////////////////////////////
@@ -87,15 +145,27 @@ int nN1 = 5, nN2 = 11, nN3 = 4, nN4 = 7, nN5 = -1;
 	stop
 
 
-//Задание 3б. Модифицируйте функцию 3а с помощью макросов
-// va_start, va_arg, va_end
+		//Задание 3б. Модифицируйте функцию 3а с помощью макросов
+		// va_start, va_arg, va_end
 #endif
 	stop
 ///////////////////////////////////////////////////////////////////
 //Тема "Старые" потоковые функции стандартной библиотеки
 //Задание 4.1
-#if 0
+#if 1
 //С помощью функции scanf сформирйуте три коэффициента : A, B, C
+	{
+		int a, b, c;
+		
+		printf("Enter integers: ");
+		printf("A: ");
+		scanf("%d", &a);
+		printf("B: ");
+		scanf("%d", &b);
+		printf("C: ");
+		scanf("%d", &c);
+		printf("A = %d, B = %d, C = %d", a, b, c);
+	}
 #endif
 	stop
 //Задание 4.2.

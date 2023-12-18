@@ -1,4 +1,4 @@
-
+#pragma once
 //Прототипы функций, используемых в данном задании :
 //void VarArgs(int arg1, ...);
 
@@ -14,3 +14,4 @@ const char* GetString4();
 const char* GetString5();
 const int PrintArray(int** arr, int N, int M);
 
+//extern const int N, M;
