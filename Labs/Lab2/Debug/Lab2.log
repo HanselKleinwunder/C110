@@ -1,2 +1,6 @@
-﻿  Lab2_С110_2023.cpp
-  Lab2.vcxproj -> E:\Lernen\Documents\IT\Repositories\C110\Labs\Debug\Lab2.exe
+﻿  other.cpp
+D:\Documents\IT\Git\Repositories\C110\Labs\Lab2\other.cpp(122,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Documents\IT\Git\Repositories\C110\Labs\Lab2\other.cpp(124,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Documents\IT\Git\Repositories\C110\Labs\Lab2\other.cpp(134,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Documents\IT\Git\Repositories\C110\Labs\Lab2\other.cpp(153,24): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab2.vcxproj -> D:\Documents\IT\Git\Repositories\C110\Labs\Debug\Lab2.exe

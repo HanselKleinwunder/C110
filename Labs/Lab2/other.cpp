@@ -142,7 +142,7 @@ void PrinArray(int arr[][M], int N) {
 bool isLeapYear(int year) {
 	return (year % 4 == 0) && !(year % 100 == 0) || (year % 400 == 0);
 }
-int DayOfYear(int day, int month, int year, int nDayTab[][12]) {
+int DayOfYear(int day, int month, int year, int arr[][12]) {
 	int N = 0;
 	int dayCount = 0;
 
@@ -150,9 +150,9 @@ int DayOfYear(int day, int month, int year, int nDayTab[][12]) {
 		return -1;
 	}
 	if (isLeapYear(year)) {
-		for (size_t i = 0; i < month; i++)
+		for (size_t i = 1; i < month; i++)
 		{
-			dayCount += nDayTab[N][i];
+			dayCount += arr[N][i];
 		}
 
 		return dayCount + day;
@@ -160,15 +160,31 @@ int DayOfYear(int day, int month, int year, int nDayTab[][12]) {
 	else {
 		N = 1;
 		for (int i = 1; i < month; i++) {
-			dayCount += nDayTab[N][i];
+			dayCount += arr[N][i];
 		}
 		return dayCount + day;
 	}
 }
-int DayOfMonth(int day, int year, int nDayTab[][12]) {
+int DayOfMonth(int day, int year, int arr[][12]) {
 	int dayOfMonth = day;
 
-	return 0;
+	if (isLeapYear(year)) {
+		int month = 0;
+		while (dayOfMonth >= 31) {
+			dayOfMonth -= arr[0][month];
+			month++;
+		}
+
+		return dayOfMonth;
+	}
+	else {
+		int month = 0;
+		while (dayOfMonth > 31) {
+			dayOfMonth -= arr[1][month];
+			month++;
+		}
+		return dayOfMonth;
+	}
 }
 double sum(double x, double y) {
 	return x + y;
