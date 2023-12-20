@@ -301,7 +301,7 @@ int main()
 	stop
 /////////////////////////////////////////////////////////////////////
 //Задание 3*. Объявление и использование указателей на многомерные массивы.
-#if 1
+#if 0
 	//Проинициализируйте трехмерный массив
 	const int N = 4, M = 3, K = 4;
 	double dArray[N][M][K]; //так, как показано на рисунке и напишите фрагмент
@@ -396,7 +396,7 @@ int main()
 #endif	
 ///////////////////////////////////////////////////////////////////////////
 //Задание 4
-#if 0
+#if 1
 	{
 		//а) Объявите двухмерный ВСТРОЕННЫЙ массив элементов типа char.
 		const int N = 5, M = 10;
@@ -507,43 +507,43 @@ int main()
 		std::cout << "B: " << std::endl;
 		std::cout << std::endl;
 
-		for (int i = 0; i < N - 1; i++) {
-			for (int j = 0; j < M; j++) {
-				if (arr[i][j] == '*') {
-					arr[i][j] = '_';
-					arr[i + 1][j] = '*';
-				}
-			}
-		}
-
-		//for (size_t i = 0; i < N - 1; i++)
-		//{
-		//	char left = 0;
-		//	char right = M;
-
-		//	while (left < right)
-		//	{
-		//		if (arr[i][left] == '_')
-		//		{
-		//			if (arr[i][right] == '*')
-		//			{
-		//				char temp = arr[i][left];
-		//				arr[i][left] = arr[i][right];
-		//				arr[i][right] = temp;
-		//				left++;
-		//				right--;
-		//			}
-		//			else
-		//			{
-		//				right--;
-		//			}
-		//		}
-		//		else
-		//		{
-		//			left++;
+		//for (int i = 0; i < N - 1; i++) {
+		//	for (int j = 0; j < M; j++) {
+		//		if (arr[i][j] == '*') {
+		//			arr[i][j] = '_';
+		//			arr[i + 1][j] = '*';
 		//		}
 		//	}
 		//}
+
+		for (size_t i = 0; i < N - 1; i++)
+		{
+			char left = M - 1;
+			char right = 0;
+
+			while (left < right)
+			{
+				if (arr[i][left] == '_')
+				{
+					if (arr[i][right] == '*')
+					{
+						char temp = arr[i][left];
+						arr[i][left] = arr[i][right];
+						arr[i][right] = temp;
+						left++;
+						right--;
+					}
+					else
+					{
+						right--;
+					}
+				}
+				else
+				{
+					left++;
+				}
+			}
+		}
 
 		for (size_t i = 0; i < N; i++)
 		{
@@ -554,6 +554,8 @@ int main()
 
 			std::cout << std::endl;
 		}
+
+		std::cout << std::endl;
 	}
 #endif	
 /////////////////////////////////////////////////////////////////

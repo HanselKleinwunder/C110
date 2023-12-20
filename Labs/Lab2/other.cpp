@@ -79,44 +79,70 @@ void SwapInt(void* p1, void* p2)
 	*y = temp;
 }
 //-----------------------------------------------------------------------
-//int CmpInt(void* p1, void* p2)
-//{
-//	int nResult;
-//
-//
-//
-//
-//	return nResult;
-//}
+int CmpInt(void* p1, void* p2)
+{
+	int nResult;
+	nResult = *static_cast<int*>(p1) - *static_cast<int*>(p2);
+
+	if (nResult > 0)
+		return 1;
+	if (nResult < 0)
+		return -1;
+	return 0;
+
+}
+
+void SwapDouble(void* p1, void* p2)
+{
+	double* x = static_cast<double*>(p1);
+	double* y = static_cast<double*>(p2);
+	double temp = *x;
+	*x = *y;
+	*y = temp;
+}
 //-----------------------------------------------------------------------
-//const char* GetString1()
-//{
-//	return "Hello";
-//}
-////-----------------------------------------------------------------------
-//const char* GetString2()
-//{
-//	/*char* str = "Book";
-//	return str;*/
-//}
-////-----------------------------------------------------------------------
-//const char* GetString3()
-//{
-//	char str[] = "Little";
-//	return str;
-//}
-////-----------------------------------------------------------------------
-//const char* GetString4()
-//{
-//	static char str[] = "world";
-//	return str;
-//}
-////-----------------------------------------------------------------------
-//const char* GetString5()
-//{
-//	char* str = new char[strlen("time") + 1];
-//	return str;
-//}
+double CmpDouble(void* p1, void* p2)
+{
+	double nResult;
+	nResult = *static_cast<double*>(p1) - *static_cast<double*>(p2);
+
+	if (nResult > 0)
+		return 1;
+	if (nResult < 0)
+		return -1;
+	return 0;
+
+}
+//-----------------------------------------------------------------------
+const char* GetString1()
+{
+	return "Hello";
+}
+//-----------------------------------------------------------------------
+const char* GetString2()
+{
+	return "Book";
+	/*char* str = "Book";
+	return str;*/
+}
+//-----------------------------------------------------------------------
+const char* GetString3()
+{
+	char str[] = "Little";
+	return str;
+}
+//-----------------------------------------------------------------------
+const char* GetString4()
+{
+	static char str[] = "world";
+	return str;
+}
+//-----------------------------------------------------------------------
+const char* GetString5()
+{
+	char* str = new char[strlen("time") + 1];
+	return str;
+}
 void PrintArray(int** arr, int n, int m) {
 
 	for (size_t i = 0; i < n; i++)
@@ -184,6 +210,36 @@ int DayOfMonth(int day, int year, int arr[][12]) {
 			month++;
 		}
 		return dayOfMonth;
+	}
+}
+const char* DefineMonth(int day) {
+	switch (day) {
+	case 1:
+		return "January";
+	case 2:
+		return "February";
+	case 3:
+		return "March";
+	case 4:
+		return "April";
+	case 5:
+		return "May";
+	case 6:
+		return "June";
+	case 7:
+		return "July";
+	case 8:
+		return "August";
+	case 9:
+		return "September";
+	case 10:
+		return "October";
+	case 11:
+		return "November";
+	case 12:
+		return "December";
+	default:
+		break;
 	}
 }
 double sum(double x, double y) {

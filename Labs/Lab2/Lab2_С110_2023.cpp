@@ -77,7 +77,7 @@ int _tmain()
 /////////////////////////////////////////////////////////////////////////////
 //Задание 2. 
 //Передача имени встроенного двумерного массива в качестве параметра функции.
-#if 1
+#if 0
 //Напишите две взаимодополняющие друг друга функции:
 //1.  ... DayOfYear(...)
 //- преобразует день месяца (число,месяц и год задаются в качестве параметров)
@@ -116,6 +116,11 @@ int _tmain()
 		std::cout << std::endl;
 		std::cout << "The " << day << "." << month << "." << year << " is the " << dayOfYear << " day of the year." << std::endl;
 	}
+
+	int dayOfMonth = DayOfMonth(day, year, nDayTab);
+	const char* defineMonth = DefineMonth(day / 30 + 1);
+
+	std::cout << "The " << dayOfMonth << " day of the " << defineMonth << std::endl;
 
 	//size_t day = ..., month = ..., year = ...;
 	//size_t numDay = DayOfYear(day, month, year, nDayTab);  //Важно! последний параметр- имя двумерного (!) массива
@@ -283,25 +288,92 @@ int _tmain()
 	//<0 - первый элемент меньше, чем второй
 	//=0 - равны
 	//>0 - первый элемент больше, чем второй
-	/*
-		int nAr[]=...	//массив для сортировки
 
-		//Печать исходного массива
+	srand(time(0));
+	const int N = 10;
+	int nAr[10]; //массив для сортировки
 
-		//Вызов сортировки
-		int nTotal=...			//количество элементов в массиве
-		Sort(reinterpret_cast<char*>(&nAr[0]), nTotal, sizeof(int), SwapInt, CmpInt);
+	for (size_t i = 0; i < N; i++)
+	{
+		nAr[i] = rand() % 100;
+	}
+	//Печать исходного массива
+	for (size_t i = 0; i < N; i++)
+	{
+		std::cout << nAr[i] << " ";
+	}
+	std::cout << std::endl;
 
-		//Печать результатов сортировки
+	//Вызов сортировки
+	int nTotal = N; //количество элементов в массиве
+	Sort(reinterpret_cast<char*>(&nAr[0]), nTotal, sizeof(int), SwapInt, CmpInt);
 
-		stop
-	*/
-	/*
+	//Печать результатов сортировки
+	for (size_t i = 0; i < N; i++)
+	{
+		std::cout << nAr[i] << " ";
+	}
+
+	std::cout << std::endl;
+
+	if (CmpInt(reinterpret_cast<char*>(&nAr[0]), &nTotal) == 1) {
+		std::cout << "The first element is greater than the second";
+	}
+	else if (CmpInt(reinterpret_cast<char*>(&nAr[0]), &nTotal) == -1) {
+		std::cout << "The second element is greater than the first";
+	}
+	else {
+		std::cout << "Elements are equal";
+
+	}
+	std::cout << std::endl;
+	stop
+
 	//Задание 6б. По аналогии с 6а создайте вспомогательные
 	//функции - SwapDouble и CmpDouble и вызовите функцию Sort
 	//для сортировки массива вещественных значений.
-	*/
+	std::cout << std::endl;
 
+	{
+		srand(time(0));
+		const int N = 10;
+		double nAr[10]; //массив для сортировки
+
+		for (size_t i = 0; i < N; i++)
+		{
+			nAr[i] = rand() % 100 / 10.0;
+		}
+		//Печать исходного массива
+		for (size_t i = 0; i < N; i++)
+		{
+			std::cout << nAr[i] << "  ";
+		}
+		std::cout << std::endl;
+
+		//Вызов сортировки
+		int nTotal = N; //количество элементов в массиве
+		Sort(reinterpret_cast<char*>(&nAr[0]), nTotal, sizeof(double), SwapInt, CmpInt);
+
+		//Печать результатов сортировки
+		for (size_t i = 0; i < N; i++)
+		{
+			std::cout << nAr[i] << "  ";
+		}
+
+		std::cout << std::endl;
+
+		if (CmpInt(reinterpret_cast<char*>(&nAr[0]), &nTotal) == 1) {
+			std::cout << "The first element is greater than the second";
+		}
+		else if (CmpInt(reinterpret_cast<char*>(&nAr[0]), &nTotal) == -1) {
+			std::cout << "The second element is greater than the first";
+		}
+		else {
+			std::cout << "Elements are equal";
+
+		}
+	}
+	stop
 	/*
 	//Задание 6в*. По аналогии с 6а создайте вспомогательные
 	//функции - SwapStr и CmpStr и вызовите функцию Sort
@@ -338,15 +410,20 @@ int _tmain()
 	//Объявите и проинициализируйте массив указателей на функции
 	//GetString1,GetString2...
 	//Введите номер функции, которую Вы хотите вызвать:
-			int n;
+	int n;
+	const char* arr[] = { GetString1(), GetString2(), GetString3(), GetString4(), GetString5()};
+
+	for (size_t i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		std::cout << *arr << std::endl;
+	}
+
+
+	//Вызовите функцию
 
 
 
-		//Вызовите функцию
-
-
-
-		//Распечатайте результат
+	//Распечатайте результат
 #endif
 	stop
 ////////////////////////////////////////////////////////////////////////////
