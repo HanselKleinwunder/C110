@@ -1,3 +1,4 @@
+//#define _CRT_SECURE_NO_WARNINGS
 #include "other.h"
 #include <limits.h>
 #include <ctime>
@@ -128,7 +129,7 @@ const char* GetString2()
 //-----------------------------------------------------------------------
 const char* GetString3()
 {
-	char str[] = "Little";
+	static char str[] = "Little";
 	return str;
 }
 //-----------------------------------------------------------------------
@@ -141,6 +142,7 @@ const char* GetString4()
 const char* GetString5()
 {
 	char* str = new char[strlen("time") + 1];
+	strcpy(str, "time");
 	return str;
 }
 void PrintArray(int** arr, int n, int m) {
@@ -175,21 +177,29 @@ int DayOfYear(int day, int month, int year, int arr[][12]) {
 	if ((month > 12 || month < 1) || (day < 1 || day > 31) || year > 2123) {
 		return -1;
 	}
-	if (isLeapYear(year)) {
-		for (size_t i = 1; i < month; i++)
-		{
-			dayCount += arr[N][i];
-		}
+	N = isLeapYear(year);
+	for (size_t i = 0; i < month - 1; i++)
+	{
+		dayCount += arr[N][i];
+	}
 
-		return dayCount + day;
-	}
-	else {
-		N = 1;
-		for (int i = 1; i < month; i++) {
-			dayCount += arr[N][i];
-		}
-		return dayCount + day;
-	}
+	return dayCount + day;
+
+	//if (isLeapYear(year)) {
+	//	for (size_t i = 1; i < month; i++)
+	//	{
+	//		dayCount += arr[N][i];
+	//	}
+
+	//	return dayCount + day;
+	//}
+	//else {
+	//	N = 1;
+	//	for (int i = 1; i < month; i++) {
+	//		dayCount += arr[N][i];
+	//	}
+	//	return dayCount + day;
+	//}
 }
 int DayOfMonth(int day, int year, int arr[][12]) {
 	int dayOfMonth = day;

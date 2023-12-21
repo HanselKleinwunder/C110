@@ -1,9 +1,2 @@
 ﻿  Book.cpp
-D:\Documents\IT\Git\Repositories\C110\Labs\Lab3\Book.cpp(8,9): warning C4129: P: неизвестная escape-последовательность
-D:\Documents\IT\Git\Repositories\C110\Labs\Lab3\Book.cpp(8,9): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "2" имеет тип "int"
-D:\Documents\IT\Git\Repositories\C110\Labs\Lab3\Book.cpp(8,9): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "3" имеет тип "const int"
-D:\Documents\IT\Git\Repositories\C110\Labs\Lab3\Book.cpp(8,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "4" имеет тип "const double"
-  Lab3_C110_2023.cpp
-D:\Documents\IT\Git\Repositories\C110\Labs\Lab3\Lab3_C110_2023.cpp(22,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  Создание кода...
-  Lab3.vcxproj -> D:\Documents\IT\Git\Repositories\C110\Labs\Debug\Lab3.exe
+  Lab3.vcxproj -> E:\Lernen\Documents\IT\Repositories\C110\Labs\Debug\Lab3.exe
